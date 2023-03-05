@@ -2,7 +2,7 @@ import { useRef } from "react";
 import Card from "../ui/Card";
 import classes from "./NewMeetupForm.module.css";
 
-function NewMeetupForm() {
+function NewMeetupForm(props) {
   const titleInputRef = useRef();
   const imageInputRef = useRef();
   const addressInputRef = useRef();
@@ -23,9 +23,8 @@ function NewMeetupForm() {
       description: enteredDescription,
     };
 
-    // A Temporary log to see the data
-    // This data will be sent to a backend server
-    console.log("Meetup Data", meetupData);
+    // We need to use the firebase url to send the data to specified URL
+    props.onAddMeetup(meetupData);
   }
   return (
     <>
