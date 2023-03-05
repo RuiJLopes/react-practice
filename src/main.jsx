@@ -9,12 +9,17 @@ import {
 } from "react-router-dom";
 import NewMeetupPage from "./pages/NewMeetup";
 import FavoritesPage from "./pages/Favorites";
+import AllMeetUpsPage from "./pages/AllMeetups";
 
 const router = createBrowserRouter([
   {
     path: "/",
     element: <App />,
     children: [
+      {
+        path: "/",
+        element: <AllMeetUpsPage />,
+      },
       {
         path: "/new-meetup",
         element: <NewMeetupPage />,
