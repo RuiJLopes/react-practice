@@ -10,6 +10,7 @@ import {
 import NewMeetupPage from "./pages/NewMeetup";
 import FavoritesPage from "./pages/Favorites";
 import AllMeetUpsPage from "./pages/AllMeetups";
+import { FavoritesContextProvider } from "./store/favorites-context";
 
 const router = createBrowserRouter([
   {
@@ -34,6 +35,8 @@ const router = createBrowserRouter([
 
 ReactDOM.createRoot(document.getElementById("root")).render(
   <React.StrictMode>
-    <RouterProvider router={router} />
+    <FavoritesContextProvider>
+      <RouterProvider router={router} />
+    </FavoritesContextProvider>
   </React.StrictMode>
 );
